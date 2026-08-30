@@ -3,29 +3,140 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Pakve Electronics & Furniture Showroom Catalog - Samsung, LG, Sony, Voltas, IFB, Godrej appliances and solid wood furniture." />
-  <title>Showroom Catalog | Pakve Electronics & Furniture Kalamb</title>
+  <meta name="description" content="Pakve Electronics & Furniture Showroom Catalog - Explore our complete range of Home Electronics and Solid Wood Furniture in Kalamb." />
+  <title>Showroom Catalog | Pakve Electronics & Furniture</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <style>
+    .catalog-jump-bar {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+    .jump-btn {
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .jump-blue {
+      background: var(--brand-blue, #0284c7);
+      color: #fff;
+    }
+    .jump-blue:hover {
+      background: var(--brand-blue-dark, #0369a1);
+      transform: translateY(-2px);
+    }
+    .jump-red {
+      background: var(--brand-red, #e11d48);
+      color: #fff;
+    }
+    .jump-red:hover {
+      background: var(--brand-red-dark, #be123c);
+      transform: translateY(-2px);
+    }
+    .section-header-box {
+      background: var(--bg-light, #f8fafc);
+      border-left: 6px solid var(--brand-blue, #0284c7);
+      padding: 20px 24px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 35px;
+    }
+    .section-header-box.red-border {
+      border-left-color: var(--brand-red, #e11d48);
+    }
+    .section-header-box h2 {
+      font-size: 1.8rem;
+      margin-bottom: 4px;
+    }
+    .section-header-box p {
+      color: var(--text-muted, #64748b);
+      font-size: 0.95rem;
+    }
+
+    /* Product Card Image Container & Centering */
+    .product-preview {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      background: #f8fafc;
+      border-bottom: 1px solid var(--border-color, #e2e8f0);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .product-preview img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      object-position: center;
+      transition: transform 0.35s ease;
+      display: block;
+    }
+    .product-card:hover .product-preview img {
+      transform: scale(1.05);
+    }
+    .product-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 2;
+      background: var(--brand-blue, #0284c7);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    }
+    .product-tag.tag-furniture {
+      background: var(--brand-red, #e11d48);
+    }
+    .product-brands {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 12px 0 16px;
+    }
+    .product-brands span {
+      background: #f1f5f9;
+      color: #334155;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- TOP BAR -->
+  <!-- Top Announcement Bar -->
   <div class="top-bar">
-    <div>📍 Dhoki Rd, Kalamb, Maharashtra 413507 • Instant Quotes on WhatsApp</div>
+    <div>📍 413507, Dhoki Rd, Kalamb, Maharashtra • Complete Product Catalog</div>
     <div class="top-bar-contact">
       <a href="https://wa.me/918208553892" target="_blank" class="top-bar-item">WhatsApp: 8208553892</a>
       <a href="tel:9021780210" class="top-bar-item">Director: 90217 80210</a>
     </div>
   </div>
 
-  <!-- NAVBAR -->
+  <!-- Navbar -->
   <nav class="navbar" aria-label="Main Navigation">
-    <a href="/" class="logo" aria-label="Pakve Electronics and Furniture Home">
+    <a href="/" class="logo">
       <div class="logo-badge"><span>प</span></div>
       <div class="logo-text-group">
         <span class="logo-marathi">पंकवे</span>
@@ -34,148 +145,348 @@
     </a>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
-      <li><a href="/about">About Us</a></li>
-      <li><a href="/catalog" class="active">Showroom Catalog</a></li>
+      <li><a href="/about.html">About Us</a></li>
+      <li><a href="/catalog.html" class="active">Showroom Catalog</a></li>
       <li>
-        <a href="https://wa.me/918208553892?text=Hi,%20I%20want%20a%20price%20quote%20for%20a%20product" target="_blank" class="btn-nav">
-          <svg class="icon-inline" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.34 5L2 22l5.25-1.38c1.45.79 3.08 1.21 4.75 1.21 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+        <a href="https://wa.me/918208553892?text=Hello%20Pakve%20Showroom,%20I%20want%20a%20product%20quotation" target="_blank" class="btn-nav">
           WhatsApp Quote
         </a>
       </li>
     </ul>
   </nav>
 
-  <!-- PAGE HEADER -->
+  <!-- Page Header with Jump Links -->
   <header class="page-header">
-    <h1>Showroom Catalog</h1>
-    <p>Explore authorized electronics (Samsung, LG, Sony, Voltas, IFB, Godrej) and handcrafted solid wood furniture at our Kalamb showroom.</p>
+    <h1>Showroom Product Catalog</h1>
+    <p>Explore our two dedicated wings: Home Electronics & Appliances and Solid Wood Furniture.</p>
+    <div class="catalog-jump-bar">
+      <a href="#electronics-wing" class="jump-btn jump-blue">Jump to Electronics Wing</a>
+      <a href="#furniture-wing" class="jump-btn jump-red">Jump to Furniture Wing</a>
+    </div>
   </header>
 
-  <!-- CATALOG GRID -->
-  <main class="section">
-    <div class="grid-container">
-
-      <!-- SMART TVS -->
-      <article class="product-card">
-        <div class="product-preview">
-          <span class="product-tag">Electronics</span>
-          <svg class="icon-svg-decor" viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
-        </div>
-        <div class="product-body">
-          <h3>Smart LED & 4K QLED TVs</h3>
-          <p>32" to 65" screen sizes from authorized brands with official manufacturer tax invoices.</p>
-          <div class="product-brands">
-            <span>Sony Bravia</span><span>Samsung</span><span>LG</span>
-          </div>
-          <a href="https://wa.me/918208553892?text=Inquiring%20about%20Smart%20TV%20prices%20at%20Pakve%20Showroom" target="_blank" class="btn btn-secondary btn-block">Inquire on WhatsApp</a>
-        </div>
-      </article>
-
-      <!-- REFRIGERATORS -->
-      <article class="product-card">
-        <div class="product-preview">
-          <span class="product-tag">Appliances</span>
-          <svg class="icon-svg-decor" viewBox="0 0 24 24"><path d="M7 2h10c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2H7c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2zm0 2v6h10V4H7zm0 8v8h10v-8H7zm1 2h2v3H8v-3z"/></svg>
-        </div>
-        <div class="product-body">
-          <h3>Refrigerators & Freezers</h3>
-          <p>Single door, double door frost-free, and side-by-side inverter energy-saving models.</p>
-          <div class="product-brands">
-            <span>Godrej</span><span>LG</span><span>Samsung</span>
-          </div>
-          <a href="https://wa.me/918208553892?text=Inquiring%20about%20Refrigerator%20prices%20at%20Pakve%20Showroom" target="_blank" class="btn btn-secondary btn-block">Inquire on WhatsApp</a>
-        </div>
-      </article>
-
-      <!-- WASHING MACHINES -->
-      <article class="product-card">
-        <div class="product-preview">
-          <span class="product-tag">Laundry</span>
-          <svg class="icon-svg-decor" viewBox="0 0 24 24"><path d="M18 2.01L6 2c-1.11 0-2 .89-2 2v16c0 1.11.89 2 2 2h12c1.11 0 2-.89 2-2V4c0-1.11-.89-1.99-2-1.99zM18 20H6v-9.02h12V20zm0-11H6V4h12v5zM8 6h2v2H8V6zm4 0h2v2h-2V6z"/></svg>
-        </div>
-        <div class="product-body">
-          <h3>Washing Machines</h3>
-          <p>Top-load and front-load fully automatic machines with steam wash and smart inverters.</p>
-          <div class="product-brands">
-            <span>IFB</span><span>LG</span><span>Samsung</span>
-          </div>
-          <a href="https://wa.me/918208553892?text=Inquiring%20about%20Washing%20Machine%20prices%20at%20Pakve%20Showroom" target="_blank" class="btn btn-secondary btn-block">Inquire on WhatsApp</a>
-        </div>
-      </article>
-
-      <!-- AIR CONDITIONERS -->
-      <article class="product-card">
-        <div class="product-preview">
-          <span class="product-tag">Cooling</span>
-          <svg class="icon-svg-decor" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
-        </div>
-        <div class="product-body">
-          <h3>Inverter Split ACs</h3>
-          <p>1 Ton to 2 Ton heavy-duty copper split air conditioners with instant cooling technology.</p>
-          <div class="product-brands">
-            <span>Voltas</span><span>LG Dual Inverter</span><span>Godrej</span>
-          </div>
-          <a href="https://wa.me/918208553892?text=Inquiring%20about%20AC%20prices%20at%20Pakve%20Showroom" target="_blank" class="btn btn-secondary btn-block">Inquire on WhatsApp</a>
-        </div>
-      </article>
-
-      <!-- SMALL APPLIANCES -->
-      <article class="product-card">
-        <div class="product-preview">
-          <span class="product-tag">Kitchen</span>
-          <svg class="icon-svg-decor" viewBox="0 0 24 24"><path d="M12 6c1.11 0 2-.9 2-2 0-.38-.1-.73-.29-1.03L12 0l-1.71 2.97c-.19.3-.29.65-.29 1.03 0 1.1.9 2 2 2zm6 3h-1V8c0-.55-.45-1-1-1h-1.17C14.47 6.47 13.31 6 12 6s-2.47.47-2.83 1H8c-.55 0-1 .45-1 1v1H6c-1.66 0-3 1.34-3 3v9c0 .55.45 1 1 1h16c.55 0 1-.45 1-1v-9c0-1.66-1.34-3-3-3z"/></svg>
-        </div>
-        <div class="product-body">
-          <h3>Mixer Grinders, Irons & Small Appliances</h3>
-          <p>Heavy duty kitchen mixers, steam irons, dry irons, water purifiers, and geysers.</p>
-          <div class="product-brands">
-            <span>Philips</span><span>Bajaj</span><span>Godrej</span>
-          </div>
-          <a href="https://wa.me/918208553892?text=Inquiring%20about%20small%20appliances" target="_blank" class="btn btn-secondary btn-block">Inquire on WhatsApp</a>
-        </div>
-      </article>
-
-      <!-- BEDS & WARDROBES -->
-      <article class="product-card">
-        <div class="product-preview">
-          <span class="product-tag tag-furniture">Bedroom</span>
-          <svg class="icon-svg-decor" viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg>
-        </div>
-        <div class="product-body">
-          <h3>Beds, Wardrobes & Dressing Tables</h3>
-          <p>Hydraulic storage double beds, sliding almirahs, full-length mirror dressers, and solid wood cots.</p>
-          <div class="product-brands">
-            <span>Hydraulic Beds</span><span>Wardrobes</span><span>Dressing Tables</span>
-          </div>
-          <a href="https://wa.me/918208553892?text=Inquiring%20about%20Bedroom%20Furniture%20at%20Pakve%20Showroom" target="_blank" class="btn btn-primary btn-block">Inquire on WhatsApp</a>
-        </div>
-      </article>
-
-      <!-- SOFAS & OFFICE CHAIRS -->
-      <article class="product-card">
-        <div class="product-preview">
-          <span class="product-tag tag-furniture">Living & Office</span>
-          <svg class="icon-svg-decor" viewBox="0 0 24 24"><path d="M20 10V7c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v3c-1.1 0-2 .9-2 2v5h1.33L4 19h1l.67-2h12.67l.66 2h1l.67-2H22v-5c0-1.1-.9-2-2-2zm-9 0H6V7h5v3zm7 0h-5V7h5v3z"/></svg>
-        </div>
-        <div class="product-body">
-          <h3>Sofas, Dining Sets & Office Chairs</h3>
-          <p>L-shaped living room sofas, ergonomic office chairs, and 4/6-seater wooden dining tables.</p>
-          <div class="product-brands">
-            <span>Living Sofas</span><span>Dining Sets</span><span>Office Chairs</span>
-          </div>
-          <a href="https://wa.me/918208553892?text=Inquiring%20about%20Sofas%20and%20Chairs" target="_blank" class="btn btn-primary btn-block">Inquire on WhatsApp</a>
-        </div>
-      </article>
-
+  <!-- SECTION 1: ELECTRONICS WING -->
+  <section class="section" id="electronics-wing">
+    <div class="section-header-box">
+      <span class="subheading">Wing 1</span>
+      <h2>Home Electronics & Smart Appliances</h2>
+      <p>Authorized dealership sales with brand warranty cards, GST invoices, and 0% EMI schemes.</p>
     </div>
-  </main>
+    <div class="grid-container" id="electronicsGrid"></div>
+  </section>
 
-  <!-- FOOTER -->
+  <!-- SECTION 2: FURNITURE WING -->
+  <section class="section bg-light" id="furniture-wing">
+    <div class="section-header-box red-border">
+      <span class="subheading" style="color: var(--brand-red, #e11d48);">Wing 2</span>
+      <h2>Solid Wood & Handcrafted Furniture</h2>
+      <p>Custom dimensions, seasoned solid teakwood structures, termite-proof ply, and custom fabrics.</p>
+    </div>
+    <div class="grid-container" id="furnitureGrid"></div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <h2>Planning a Wedding or Complete House Furnishing?</h2>
+    <p>Bundle your Smart TV, Refrigerator, and Washing Machine with a complete Bedroom & Sofa Set for combo discounts.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/918208553892?text=Hello%20Pakve%20Showroom,%20I%20am%20interested%20in%20a%20Home%20Package%20Quote" target="_blank" class="btn btn-white">WhatsApp 8208553892</a>
+      <a href="/contact.html" class="btn btn-outline-white">Visit Showroom in Kalamb</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>पंकवे इलेक्ट्रॉनिक्स & फर्निचर</h3>
+        <p>Pakve Electronics & Furniture, 413507, Dhoki Rd, Kalamb, Maharashtra 413507.</p>
+        <p><strong>Showroom WhatsApp:</strong> +91 8208553892</p>
+        <p><strong>Director Desk:</strong> +91 90217 80210</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Electronics</h4>
+        <ul>
+          <li><a href="#electronics-wing">Smart 4K TVs</a></li>
+          <li><a href="#electronics-wing">Inverter Refrigerators</a></li>
+          <li><a href="#electronics-wing">Washing Machines</a></li>
+          <li><a href="#electronics-wing">Split ACs & Coolers</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Furniture</h4>
+        <ul>
+          <li><a href="#furniture-wing">Living Room Sofas</a></li>
+          <li><a href="#furniture-wing">Hydraulic Storage Beds</a></li>
+          <li><a href="#furniture-wing">Kapat & Wardrobes</a></li>
+          <li><a href="#furniture-wing">Dining Table Sets</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Store Hours</h4>
+        <ul>
+          <li><strong style="color:#fff;">Mon – Sat:</strong> 9:00 AM – 9:00 PM</li>
+          <li><strong style="color:#fff;">Sunday:</strong> 9:00 AM – 8:00 PM</li>
+          <li><span style="color:#22c55e;">● Open 7 Days a Week</span></li>
+        </ul>
+      </div>
+    </div>
+
     <div class="footer-bottom">
-      <p>&copy; 2026 Pakve Electronics & Furniture. 413507, Dhoki Rd, Kalamb, Maharashtra 413507.</p>
+      <p>&copy; 2026 Pakve Electronics & Furniture. Dhoki Rd, Kalamb, Maharashtra 413507.</p>
     </div>
   </footer>
 
+  <!-- Catalog Data & Render Script -->
+  <script>
+    const catalogData = [
+      // 1. ELECTRONICS WING
+      { 
+        name: "Smart LED & 4K QLED TV", 
+        category: "electronics", 
+        tag: "Display", 
+        image: "/images/electronics/tv.jpg",
+        desc: "Available in 32\", 43\", 55\", and 65\" screen sizes with Google TV, Dolby Atmos, and 4K HDR clarity.", 
+        brands: ["Sony Bravia", "Samsung", "LG"] 
+      },
+      { 
+        name: "Refrigerator", 
+        category: "electronics", 
+        tag: "Cooling", 
+        image: "/images/electronics/fridge.jpg",
+        desc: "Single door direct cool, double door frost-free, and side-by-side inverter energy-saving models.", 
+        brands: ["Godrej", "LG", "Samsung"] 
+      },
+      { 
+        name: "Air Conditioner (Split AC)", 
+        category: "electronics", 
+        tag: "Cooling", 
+        image: "/images/electronics/ac.jpg",
+        desc: "1 to 2 Ton 100% copper inverter split air conditioners with rapid cooling and anti-viral filters.", 
+        brands: ["Voltas", "LG Dual Inverter", "Godrej"] 
+      },
+      { 
+        name: "Washing Machine", 
+        category: "electronics", 
+        tag: "Laundry", 
+        image: "/images/electronics/washing-machine.jpg",
+        desc: "Semi-automatic, top-load, and front-load fully automatic machines with built-in steam wash.", 
+        brands: ["IFB", "LG", "Samsung"] 
+      },
+      { 
+        name: "Desert Air Cooler", 
+        category: "electronics", 
+        tag: "Air Cooling", 
+        image: "/images/electronics/cooler.jpg",
+        desc: "Desert and personal air coolers with honeycomb cooling pads, high air throw, and low power use.", 
+        brands: ["Symphony", "Kenstar", "Bajaj"] 
+      },
+      { 
+        name: "Microwave Oven / OTG", 
+        category: "electronics", 
+        tag: "Kitchen", 
+        image: "/images/electronics/oven.jpg",
+        desc: "Solo, grill, and convection microwave ovens for quick baking, grilling, and reheating.", 
+        brands: ["IFB", "LG", "Samsung"] 
+      },
+      { 
+        name: "Induction Cooktop", 
+        category: "electronics", 
+        tag: "Cooking", 
+        image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80",
+        desc: "Energy-efficient flameless cookers with preset Indian cooking options and push controls.", 
+        brands: ["Philips", "Bajaj", "Prestige"] 
+      },
+      { 
+        name: "Ceiling Fan (BLDC / High Speed)", 
+        category: "electronics", 
+        tag: "Airflow", 
+        image: "/images/electronics/fan.jpg",
+        desc: "Energy-saving 5-star BLDC ceiling fans with remote and high-speed decorative designer fans.", 
+        brands: ["Atomberg", "Havells", "Crompton"] 
+      },
+      { 
+        name: "Water Geyser", 
+        category: "electronics", 
+        tag: "Water Heating", 
+        image: "/images/electronics/geyser.jpg",
+        desc: "Instant and storage geysers (6L to 25L) with anti-corrosion glass-lined inner tanks.", 
+        brands: ["Bajaj", "Racold", "V-Guard"] 
+      },
+      { 
+        name: "Home Theatre & Soundbar", 
+        category: "electronics", 
+        tag: "Audio", 
+        image: "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=800&q=80",
+        desc: "Premium Sony 5.1ch Dolby Digital surround sound systems with wireless subwoofers.", 
+        brands: ["Exclusive Sony Audio", "Dolby 5.1"] 
+      },
+      { 
+        name: "Kitchen Chimney", 
+        category: "electronics", 
+        tag: "Kitchen Hood", 
+        image: "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=800&q=80",
+        desc: "Autoclean filterless kitchen chimneys with motion sensor touch controls and high suction.", 
+        brands: ["Elica Autoclean", "Motion Sensor"] 
+      },
+      { 
+        name: "RO Water Purifier", 
+        category: "electronics", 
+        tag: "Purifier", 
+        image: "/images/electronics/ro-purifier.jpg",
+        desc: "Multi-stage RO + UV + UF purification with TDS control and mineral cartridge for clean drinking water.", 
+        brands: ["Kent", "Aquaguard"] 
+      },
+      { 
+        name: "Voltage Stabilizer", 
+        category: "electronics", 
+        tag: "Protection", 
+        image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
+        desc: "Dedicated digital stabilizers for ACs, TVs, and Refrigerators to prevent voltage surges.", 
+        brands: ["V-Guard", "Microtek"] 
+      },
+      { 
+        name: "Mixer Grinder", 
+        category: "electronics", 
+        tag: "Kitchen", 
+        image: "https://images.unsplash.com/photo-1570222094114-d054a817e56b?auto=format&fit=crop&w=800&q=80",
+        desc: "Heavy duty 500W to 1000W copper motors with 3 & 4 stainless steel jars for fine grinding.", 
+        brands: ["Philips", "Bajaj", "Prestige", "Sujata"] 
+      },
+
+      // 2. FURNITURE WING
+      { 
+        name: "Double Bed (Hydraulic Cot)", 
+        category: "furniture", 
+        tag: "Bedroom", 
+        image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80",
+        desc: "King and Queen size double beds with smooth gas-lift hydraulic storage and padded headboards.", 
+        brands: ["Hydraulic Storage", "Solid Wood", "King/Queen"] 
+      },
+      { 
+        name: "Living Room Sofa Set", 
+        category: "furniture", 
+        tag: "Living Room", 
+        image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80",
+        desc: "L-shape sectionals, 3+2+1 sets, and high-density foam with customizable velvet or leatherette.", 
+        brands: ["Teak Wood Frame", "Custom Velvet", "L-Shape"] 
+      },
+      { 
+        name: "Modular Sliding Wardrobe", 
+        category: "furniture", 
+        tag: "Storage", 
+        image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80",
+        desc: "Sliding door wardrobes with dressing mirrors, internal partitions, and waterproof ply build.", 
+        brands: ["Modular Sliding", "Waterproof Ply"] 
+      },
+      { 
+        name: "Steel & Wooden Kapat (Almirah)", 
+        category: "furniture", 
+        tag: "Storage", 
+        image: "https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=800&q=80",
+        desc: "Heavy-gauge steel almirahs with safety lockers, full-length mirrors, and traditional cupboards.", 
+        brands: ["Heavy Gauge Steel", "Safety Lockers"] 
+      },
+      { 
+        name: "Comfort Mattress", 
+        category: "furniture", 
+        tag: "Comfort", 
+        image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80",
+        desc: "Orthopaedic memory foam, pocket spring, and dual-comfort coir mattresses for spinal support.", 
+        brands: ["Orthopaedic", "Pocket Spring", "Memory Foam"] 
+      },
+      { 
+        name: "Ergonomic Pillows & Cushions", 
+        category: "furniture", 
+        tag: "Bedding", 
+        image: "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80",
+        desc: "Microfiber and memory foam contour pillows for cervical neck support and sleeping comfort.", 
+        brands: ["Memory Foam", "Microfiber"] 
+      },
+      { 
+        name: "Pooja Mandir (Devghar)", 
+        category: "furniture", 
+        tag: "Pooja Mandir", 
+        image: "/images/furniture/devghar.jpg",
+        desc: "Hand-carved solid wood home temples with drawers, brass bells, and LED backlight panels.", 
+        brands: ["Teak Wood", "Hand Carved", "LED Backlit"] 
+      },
+      { 
+        name: "Dining Table Set", 
+        category: "furniture", 
+        tag: "Dining", 
+        image: "https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=800&q=80",
+        desc: "4 and 6-seater solid wood dining tables with glass, marble, or polished wooden tabletops.", 
+        brands: ["Teak Wood", "4/6 Seater", "Marble Top"] 
+      },
+      { 
+        name: "Center Table (Teapoy)", 
+        category: "furniture", 
+        tag: "Living Room", 
+        image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=800&q=80",
+        desc: "Wooden and tempered glass tea tables (Teapoy) with bottom racks for living room decor.", 
+        brands: ["Teak Wood", "Glass Top Center Table"] 
+      },
+      { 
+        name: "Ergonomic Office Chair", 
+        category: "furniture", 
+        tag: "Work & Study", 
+        image: "/images/furniture/office-chair.jpg",
+        desc: "High-back mesh chairs with lumbar spinal support, hydraulic height adjustment, and swivel wheels.", 
+        brands: ["Hydraulic Lift", "Lumbar Support", "Mesh Back"] 
+      },
+      { 
+        name: "Office & Study Desk", 
+        category: "furniture", 
+        tag: "Work & Study", 
+        image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=800&q=80",
+        desc: "Executive office desks and student study tables with lockable drawers and wire management ports.", 
+        brands: ["Executive Finish", "Lockable Drawers"] 
+      }
+    ];
+
+    function renderCards(category, containerId) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      const items = catalogData.filter(item => item.category === category);
+
+      container.innerHTML = items.map(item => `
+        <article class="product-card">
+          <div class="product-preview">
+            <span class="product-tag ${item.category === 'furniture' ? 'tag-furniture' : ''}">${item.tag}</span>
+            <img 
+              src="${item.image}" 
+              alt="${item.name}" 
+              loading="lazy" 
+              onerror="this.onerror=null; this.src='https://placehold.co/600x400/0f172a/ffffff?text=${encodeURIComponent(item.name)}';" 
+            />
+          </div>
+          <div class="product-body">
+            <h3>${item.name}</h3>
+            <p>${item.desc}</p>
+            <div class="product-brands">
+              ${item.brands.map(b => `<span>${b}</span>`).join('')}
+            </div>
+            <a href="https://wa.me/918208553892?text=Inquiry:%20${encodeURIComponent(item.name)}%20Price%20at%20Pakve%20Showroom" 
+               target="_blank" 
+               class="btn ${item.category === 'furniture' ? 'btn-primary' : 'btn-secondary'} btn-block">
+              Inquire on WhatsApp
+            </a>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    renderCards('electronics', 'electronicsGrid');
+    renderCards('furniture', 'furnitureGrid');
+  </script>
 </body>
 </html>
+
+<div class="footer-bottom">
+  <p>&copy; 2026 Pakve Electronics & Furniture. Dhoki Rd, Kalamb, Maharashtra 413507. • <a href="/privacy.html" style="color: #94a3b8; text-decoration: underline;">Privacy Policy</a></p>
+</div>

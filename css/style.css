@@ -1213,3 +1213,13 @@ footer {
     padding: 12px;
   }
 }
+
+/* Ensure mobile dropdown sits above hero banners and buttons */
+@media (max-width: 768px) {
+  .navbar {
+    z-index: 1000;
+  }
+  .nav-links {
+    z-index: 999;
+  }
+}

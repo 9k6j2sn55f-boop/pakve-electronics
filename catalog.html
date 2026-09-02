@@ -143,7 +143,12 @@
         <span class="logo-sub">Electronics & Furniture</span>
       </div>
     </a>
-    <ul class="nav-links">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
       <li><a href="/">Home</a></li>
       <li><a href="/about.html">About Us</a></li>
       <li><a href="/catalog.html" class="active">Showroom Catalog</a></li>
@@ -484,6 +489,7 @@
     renderCards('electronics', 'electronicsGrid');
     renderCards('furniture', 'furnitureGrid');
   </script>
+  <script type="module" src="/js/main.js"></script>
 </body>
 </html>
 

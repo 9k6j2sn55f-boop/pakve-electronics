@@ -32,7 +32,12 @@
         <span class="logo-sub">Electronics & Furniture</span>
       </div>
     </a>
-    <ul class="nav-links">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
       <li><a href="/">Home</a></li>
       <li><a href="/about" class="active">About Us</a></li>
       <li><a href="/catalog">Showroom Catalog</a></li>
@@ -213,6 +218,7 @@
     document.addEventListener('DOMContentLoaded', updateTimelineGlow);
   </script>
 
+  <script type="module" src="/js/main.js"></script>
 </body>
 </html>
 <div class="footer-bottom">

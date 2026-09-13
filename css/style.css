@@ -1213,3 +1213,32 @@ footer {
     padding: 12px;
   }
 }
+
+/* Fix mobile link tap detection and layering */
+@media (max-width: 768px) {
+  .navbar {
+    position: relative;
+    z-index: 1000 !important;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 999 !important;
+    pointer-events: none;
+  }
+
+  .nav-links.is-open {
+    pointer-events: auto !important;
+  }
+
+  .nav-links li,
+  .nav-links a {
+    pointer-events: auto !important;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001 !important;
+  }
+}

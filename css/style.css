@@ -1326,3 +1326,8 @@ footer {
     padding: 12px !important;
   }
 }
+
+/* Ensure tap hits button, not child spans */
+.nav-toggle * {
+  pointer-events: none !important;
+}

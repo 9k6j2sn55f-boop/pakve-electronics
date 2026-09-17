@@ -1,6 +1,4 @@
-/* ==========================================================================
-   PAKVE ELECTRONICS & FURNITURE - COMPLETE UNIFIED STYLESHEET
-   ========================================================================== */
+
 
 * {
   margin: 0;
@@ -667,9 +665,6 @@ h1, h2, h3, h4, .brand-text {
   background: var(--white);
 }
 
-/* ==========================================================================
-   SVG ICONS STYLING (FIXES OVERSIZED BLACK ICONS)
-   ========================================================================== */
 svg {
   max-width: 100%;
 }
@@ -755,9 +750,6 @@ footer {
   color: #64748b;
 }
 
-/* ==========================================================================
-   SCROLL-DRIVEN GLOWING TIMELINE STYLES
-   ========================================================================== */
 .timeline-section {
   position: relative;
   padding: 90px 8%;
@@ -987,9 +979,6 @@ footer {
   border-color: var(--brand-red);
   box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
 }
-/* ==========================================================================
-   CONSISTENT SKU IMAGE PREVIEW STYLES
-   ========================================================================== */
 
 .product-preview {
   position: relative;
@@ -1019,106 +1008,7 @@ footer {
   z-index: 2;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
-/* ==========================================================================
-   Mobile Hamburger Menu
-   ========================================================================== */
-.nav-toggle {
-  display: none;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  width: 40px;
-  height: 40px;
-  z-index: 110;
-}
 
-.hamburger-bar {
-  display: block;
-  width: 24px;
-  height: 2.5px;
-  background-color: #0f172a;
-  border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.nav-toggle.is-active .hamburger-bar:nth-child(1) {
-  transform: translateY(7.5px) rotate(45deg);
-}
-.nav-toggle.is-active .hamburger-bar:nth-child(2) {
-  opacity: 0;
-}
-.nav-toggle.is-active .hamburger-bar:nth-child(3) {
-  transform: translateY(-7.5px) rotate(-45deg);
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 18px;
-  }
-
-  .nav-toggle {
-    display: flex;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #ffffff;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding: 10px 20px 20px;
-    border-bottom: 2px solid var(--border-color, #e2e8f0);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    pointer-events: none;
-    transition: max-height 0.35s ease, opacity 0.25s ease;
-  }
-
-  .nav-links.is-open {
-    max-height: 360px;
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .nav-links li {
-    width: 100%;
-    border-bottom: 1px solid #f1f5f9;
-  }
-
-  .nav-links li:last-child {
-    border-bottom: none;
-    margin-top: 10px;
-  }
-
-  .nav-links a {
-    display: block;
-    padding: 12px 0;
-    font-size: 1rem;
-    font-weight: 600;
-  }
-
-  .nav-links .btn-nav {
-    text-align: center;
-    padding: 12px;
-  }
-}
-/* ==========================================================================
-   Mobile Hamburger Menu
-   ========================================================================== */
 .nav-toggle {
   display: none;
   background: transparent;
@@ -1214,7 +1104,101 @@ footer {
   }
 }
 
-/* Fix mobile link tap detection and layering */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  z-index: 110;
+}
+
+.hamburger-bar {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background-color: #0f172a;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle.is-active .hamburger-bar:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+.nav-toggle.is-active .hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.is-active .hamburger-bar:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 10px 20px 20px;
+    border-bottom: 2px solid var(--border-color, #e2e8f0);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+  }
+
+  .nav-links.is-open {
+    max-height: 360px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links li {
+    width: 100%;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+    margin-top: 10px;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 12px 0;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .nav-links .btn-nav {
+    text-align: center;
+    padding: 12px;
+  }
+}
+
 @media (max-width: 768px) {
   .navbar {
     position: relative;
@@ -1243,7 +1227,6 @@ footer {
   }
 }
 
-/* Fix mobile link tap detection and layering */
 @media (max-width: 768px) {
   .navbar {
     position: relative;
@@ -1272,7 +1255,6 @@ footer {
   }
 }
 
-/* Explicit Visual Display Rules for Mobile Dropdown */
 @media (max-width: 768px) {
   .nav-links {
     display: none !important;
@@ -1327,7 +1309,6 @@ footer {
   }
 }
 
-/* Ensure tap hits button, not child spans */
 .nav-toggle * {
   pointer-events: none !important;
 }

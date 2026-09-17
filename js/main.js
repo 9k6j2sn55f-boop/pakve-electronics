@@ -22,10 +22,8 @@
       }
     }
 
-    // Bind click
     toggleBtn.onclick = toggleMenu;
 
-    // Allow normal navigation when clicking a link
     navMenu.querySelectorAll('a').forEach((link) => {
       link.onclick = () => {
         navMenu.classList.remove('is-open');
@@ -35,7 +33,6 @@
       };
     });
 
-    // Close when tapping outside
     document.addEventListener('click', (e) => {
       if (!toggleBtn.contains(e.target) && !navMenu.contains(e.target)) {
         navMenu.classList.remove('is-open');

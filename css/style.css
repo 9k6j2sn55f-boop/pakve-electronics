@@ -1312,3 +1312,24 @@ footer {
 .nav-toggle * {
   pointer-events: none !important;
 }
+
+/* Brand Logo Layout */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand-logo-img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .brand-logo-img {
+    height: 36px;
+  }
+}
